@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="5b12b1240ad84382ac3b75d84c2a4fcb" Name="Diagram1">
+        <EntityTypeShape EntityType="HutechfoodModel.Admin" Width="1.5" PointX="8.75" PointY="3.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="HutechfoodModel.BaiVietBanChay" Width="1.5" PointX="5.75" PointY="12" IsExpanded="true" />
+        <EntityTypeShape EntityType="HutechfoodModel.BaiVietGT" Width="1.5" PointX="7.75" PointY="12" IsExpanded="true" />
+        <EntityTypeShape EntityType="HutechfoodModel.BaiVietHD" Width="1.5" PointX="9.75" PointY="12" IsExpanded="true" />
+        <EntityTypeShape EntityType="HutechfoodModel.CaiDat" Width="1.5" PointX="0.75" PointY="13" IsExpanded="true" />
+        <EntityTypeShape EntityType="HutechfoodModel.ChiTietDonHang" Width="1.5" PointX="5.25" PointY="5.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="HutechfoodModel.ChiTietKhuyenMai" Width="1.5" PointX="5.25" PointY="19.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="HutechfoodModel.ChucVu" Width="1.5" PointX="11" PointY="3.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="HutechfoodModel.CuaHang" Width="1.5" PointX="1.5" PointY="24.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="HutechfoodModel.DanhMucDoAn" Width="1.5" PointX="0.75" PointY="19.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="HutechfoodModel.DoAn" Width="1.5" PointX="3" PointY="19" IsExpanded="true" />
+        <EntityTypeShape EntityType="HutechfoodModel.DonDatHang" Width="1.5" PointX="3" PointY="8" IsExpanded="true" />
+        <EntityTypeShape EntityType="HutechfoodModel.DSYeuThich" Width="1.5" PointX="6" PointY="8.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="HutechfoodModel.KhachHang" Width="1.5" PointX="0.75" PointY="8.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="HutechfoodModel.KhuyenMai" Width="1.5" PointX="3" PointY="28.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="HutechfoodModel.LichSuGD" Width="1.5" PointX="5.25" PointY="15.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="HutechfoodModel.LichSuNVGH" Width="1.5" PointX="8.25" PointY="8.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="HutechfoodModel.LienHe" Width="1.5" PointX="10.75" PointY="6" IsExpanded="true" />
+        <EntityTypeShape EntityType="HutechfoodModel.NhanVienGiaoHang" Width="1.5" PointX="6" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="HutechfoodModel.sysdiagram" Width="1.5" PointX="10.75" PointY="9" IsExpanded="true" />
+        <EntityTypeShape EntityType="HutechfoodModel.ViTien" Width="1.5" PointX="3" PointY="15.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="HutechfoodModel.ViTienCuaHang" Width="1.5" PointX="3.75" PointY="24.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="HutechfoodModel.ViTriGiaoHang" Width="1.5" PointX="0.75" PointY="4.75" IsExpanded="true" />
+        <AssociationConnector Association="HutechfoodModel.FK_ChiTietDonHang_DoAn" ManuallyRouted="false" />
+        <AssociationConnector Association="HutechfoodModel.FK_ChiTietDonHang_DonDatHang" ManuallyRouted="false" />
+        <AssociationConnector Association="HutechfoodModel.FK_ChiTietKhuyenMai_DoAn" ManuallyRouted="false" />
+        <AssociationConnector Association="HutechfoodModel.FK_ChiTietKhuyenMai_KhuyenMai" ManuallyRouted="false" />
+        <AssociationConnector Association="HutechfoodModel.FK_DanhMucDoAn_CuaHang" ManuallyRouted="false" />
+        <AssociationConnector Association="HutechfoodModel.FK_DSYeuThich_CuaHang" ManuallyRouted="false" />
+        <AssociationConnector Association="HutechfoodModel.FK_ViTienCuaHang_CuaHang" ManuallyRouted="false" />
+        <AssociationConnector Association="HutechfoodModel.FK_DoAn_DanhMucDoAn" ManuallyRouted="false" />
+        <AssociationConnector Association="HutechfoodModel.FK_DonDatHang_KhachHang" ManuallyRouted="false" />
+        <AssociationConnector Association="HutechfoodModel.FK_DonDatHang_ViTriGiaoHang" ManuallyRouted="false" />
+        <AssociationConnector Association="HutechfoodModel.FK_LichSuNVGH_DonDatHang" ManuallyRouted="false" />
+        <AssociationConnector Association="HutechfoodModel.FK_DSYeuThich_KhachHang" ManuallyRouted="false" />
+        <AssociationConnector Association="HutechfoodModel.FK_ViTien_KhachHang" ManuallyRouted="false" />
+        <AssociationConnector Association="HutechfoodModel.FK_LichSuGD_ViTien" ManuallyRouted="false" />
+        <AssociationConnector Association="HutechfoodModel.FK_LichSuNVGH_NhanVienGiaoHang" ManuallyRouted="false" />
+        <AssociationConnector Association="HutechfoodModel.QuyenAdmin" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="HutechfoodModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="DonDatHang">
+    <Key>
+      <PropertyRef Name="MaDonHang" />
+    </Key>
+    <Property Name="MaDonHang" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TinhTrangDonHang" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="NgayDat" Type="DateTime" Precision="3" />
+    <Property Name="NgayGiao" Type="DateTime" Precision="3" />
+    <Property Name="TgGiao" Type="Int16" />
+    <Property Name="MaKH" Type="Int32" Nullable="false" />
+    <Property Name="MaNV" Type="Int32" Nullable="false" />
+    <Property Name="MaVT" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityContainer Name="HutechfoodEntities2" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="DonDatHangs" EntityType="Self.DonDatHang" />
+  </EntityContainer>
+</Schema>
