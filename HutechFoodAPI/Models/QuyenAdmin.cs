@@ -12,10 +12,9 @@ namespace HutechFoodAPI.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class ChucVu
+    public partial class QuyenAdmin
     {
-        public int Id { get; set; }
-        public string TenCV { get; set; }
-        public int Quyen { get; set; }
+        public int MaAdmin { get; set; }
+        public int MaQuyen { get; set; }
     }
 }

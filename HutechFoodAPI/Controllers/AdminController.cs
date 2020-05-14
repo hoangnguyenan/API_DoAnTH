@@ -12,44 +12,44 @@ using HutechFoodAPI.Models;
 
 namespace HutechFoodAPI.Controllers
 {
-    public class ViTienController : ApiController
+    public class AdminController : ApiController
     {
         private HutechfoodEntities db = new HutechfoodEntities();
 
-        // GET: api/ViTien
-        public IQueryable<ViTien> GetViTiens()
+        // GET: api/Admin
+        public IQueryable<Admin> GetAdmins()
         {
-            return db.ViTiens;
+            return db.Admins;
         }
 
-        // GET: api/ViTien/5
-        [ResponseType(typeof(ViTien))]
-        public IHttpActionResult GetViTien(int id)
+        // GET: api/Admin/5
+        [ResponseType(typeof(Admin))]
+        public IHttpActionResult GetAdmin(int id)
         {
-            ViTien viTien = db.ViTiens.Find(id);
-            if (viTien == null)
+            Admin admin = db.Admins.Find(id);
+            if (admin == null)
             {
                 return NotFound();
             }
 
-            return Ok(viTien);
+            return Ok(admin);
         }
 
-        // PUT: api/ViTien/5
+        // PUT: api/Admin/5
         [ResponseType(typeof(void))]
-        public IHttpActionResult PutViTien(int id, ViTien viTien)
+        public IHttpActionResult PutAdmin(int id, Admin admin)
         {
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
 
-            if (id != viTien.MaViTien)
+            if (id != admin.Id)
             {
                 return BadRequest();
             }
 
-            db.Entry(viTien).State = EntityState.Modified;
+            db.Entry(admin).State = EntityState.Modified;
 
             try
             {
@@ -57,7 +57,7 @@ namespace HutechFoodAPI.Controllers
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (!ViTienExists(id))
+                if (!AdminExists(id))
                 {
                     return NotFound();
                 }
@@ -70,35 +70,35 @@ namespace HutechFoodAPI.Controllers
             return StatusCode(HttpStatusCode.NoContent);
         }
 
-        // POST: api/ViTien
-        [ResponseType(typeof(ViTien))]
-        public IHttpActionResult PostViTien(ViTien viTien)
+        // POST: api/Admin
+        [ResponseType(typeof(Admin))]
+        public IHttpActionResult PostAdmin(Admin admin)
         {
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
 
-            db.ViTiens.Add(viTien);
+            db.Admins.Add(admin);
             db.SaveChanges();
 
-            return CreatedAtRoute("DefaultApi", new { id = viTien.MaViTien }, viTien);
+            return CreatedAtRoute("DefaultApi", new { id = admin.Id }, admin);
         }
 
-        // DELETE: api/ViTien/5
-        [ResponseType(typeof(ViTien))]
-        public IHttpActionResult DeleteViTien(int id)
+        // DELETE: api/Admin/5
+        [ResponseType(typeof(Admin))]
+        public IHttpActionResult DeleteAdmin(int id)
         {
-            ViTien viTien = db.ViTiens.Find(id);
-            if (viTien == null)
+            Admin admin = db.Admins.Find(id);
+            if (admin == null)
             {
                 return NotFound();
             }
 
-            db.ViTiens.Remove(viTien);
+            db.Admins.Remove(admin);
             db.SaveChanges();
 
-            return Ok(viTien);
+            return Ok(admin);
         }
 
         protected override void Dispose(bool disposing)
@@ -110,9 +110,9 @@ namespace HutechFoodAPI.Controllers
             base.Dispose(disposing);
         }
 
-        private bool ViTienExists(int id)
+        private bool AdminExists(int id)
         {
-            return db.ViTiens.Count(e => e.MaViTien == id) > 0;
+            return db.Admins.Count(e => e.Id == id) > 0;
         }
     }
 }

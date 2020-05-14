@@ -9,7 +9,6 @@
     <Property Name="PassAdmin" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
     <Property Name="HotenAdmin" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
     <Property Name="EmailAdmin" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-    <NavigationProperty Name="ChucVus" Relationship="Self.QuyenAdmin" FromRole="Admin" ToRole="ChucVu" />
   </EntityType>
   <EntityType Name="BaiVietBanChay">
     <Key>
@@ -84,9 +83,9 @@
     <Key>
       <PropertyRef Name="Id" />
     </Key>
-    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Id" Type="Int32" Nullable="false" />
     <Property Name="TenCV" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-    <NavigationProperty Name="Admins" Relationship="Self.QuyenAdmin" FromRole="ChucVu" ToRole="Admin" />
+    <Property Name="Quyen" Type="Int32" Nullable="false" />
   </EntityType>
   <EntityType Name="CuaHang">
     <Key>
@@ -243,6 +242,14 @@
     <Property Name="DoUuTien" Type="Int16" />
     <Property Name="DanhGiaNVGH" Type="Int16" />
     <NavigationProperty Name="LichSuNVGHs" Relationship="Self.FK_LichSuNVGH_NhanVienGiaoHang" FromRole="NhanVienGiaoHang" ToRole="LichSuNVGH" />
+  </EntityType>
+  <EntityType Name="QuyenAdmin">
+    <Key>
+      <PropertyRef Name="MaAdmin" />
+      <PropertyRef Name="MaQuyen" />
+    </Key>
+    <Property Name="MaAdmin" Type="Int32" Nullable="false" />
+    <Property Name="MaQuyen" Type="Int32" Nullable="false" />
   </EntityType>
   <EntityType Name="sysdiagram">
     <Key>
@@ -471,11 +478,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="QuyenAdmin">
-    <End Role="Admin" Type="Self.Admin" Multiplicity="*" />
-    <End Role="ChucVu" Type="Self.ChucVu" Multiplicity="*" />
-  </Association>
-  <EntityContainer Name="HutechfoodEntities3" annotation:LazyLoadingEnabled="true">
+  <EntityContainer Name="HutechfoodEntities" annotation:LazyLoadingEnabled="true">
     <EntitySet Name="Admins" EntityType="Self.Admin" />
     <EntitySet Name="BaiVietBanChays" EntityType="Self.BaiVietBanChay" />
     <EntitySet Name="BaiVietGTs" EntityType="Self.BaiVietGT" />
@@ -495,6 +498,7 @@
     <EntitySet Name="LichSuNVGHs" EntityType="Self.LichSuNVGH" />
     <EntitySet Name="LienHes" EntityType="Self.LienHe" />
     <EntitySet Name="NhanVienGiaoHangs" EntityType="Self.NhanVienGiaoHang" />
+    <EntitySet Name="QuyenAdmins" EntityType="Self.QuyenAdmin" />
     <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
     <EntitySet Name="ViTiens" EntityType="Self.ViTien" />
     <EntitySet Name="ViTienCuaHangs" EntityType="Self.ViTienCuaHang" />
@@ -558,10 +562,6 @@
     <AssociationSet Name="FK_LichSuNVGH_NhanVienGiaoHang" Association="Self.FK_LichSuNVGH_NhanVienGiaoHang">
       <End Role="NhanVienGiaoHang" EntitySet="NhanVienGiaoHangs" />
       <End Role="LichSuNVGH" EntitySet="LichSuNVGHs" />
-    </AssociationSet>
-    <AssociationSet Name="QuyenAdmin" Association="Self.QuyenAdmin">
-      <End Role="Admin" EntitySet="Admins" />
-      <End Role="ChucVu" EntitySet="ChucVus" />
     </AssociationSet>
   </EntityContainer>
 </Schema>

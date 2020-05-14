@@ -163,6 +163,7 @@
     <Compile Include="Areas\HelpPage\SampleGeneration\SampleDirection.cs" />
     <Compile Include="Areas\HelpPage\SampleGeneration\TextSample.cs" />
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
+    <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\BaiVietBanChayController.cs" />
     <Compile Include="Controllers\BaiVietGTController.cs" />
     <Compile Include="Controllers\BaiVietHDController.cs" />
@@ -182,6 +183,7 @@
     <Compile Include="Controllers\LichSuNVGHController.cs" />
     <Compile Include="Controllers\LienHeController.cs" />
     <Compile Include="Controllers\NhanVienGiaoHangController.cs" />
+    <Compile Include="Controllers\QuyenAdminController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
     <Compile Include="Controllers\ViTienController.cs" />
     <Compile Include="Controllers\ViTienCuaHangController.cs" />
@@ -259,6 +261,9 @@
       <DependentUpon>hutechfood.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\NhanVienGiaoHang.cs">
+      <DependentUpon>hutechfood.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\QuyenAdmin.cs">
       <DependentUpon>hutechfood.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\sysdiagram.cs">

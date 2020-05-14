@@ -14,7 +14,7 @@ namespace HutechFoodAPI.Controllers
 {
     public class ViTriGiaoHangController : ApiController
     {
-        private HutechfoodEntities3 db = new HutechfoodEntities3();
+        private HutechfoodEntities db = new HutechfoodEntities();
 
         // GET: api/ViTriGiaoHang
         public IQueryable<ViTriGiaoHang> GetViTriGiaoHangs()

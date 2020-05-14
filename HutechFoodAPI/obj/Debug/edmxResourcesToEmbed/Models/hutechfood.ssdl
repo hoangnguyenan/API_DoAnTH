@@ -81,6 +81,7 @@
     </Key>
     <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="TenCV" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Quyen" Type="int" Nullable="false" />
   </EntityType>
   <EntityType Name="CuaHang">
     <Key>
@@ -423,30 +424,6 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK_QuyenAdmin_Admin">
-    <End Role="Admin" Type="Self.Admin" Multiplicity="1" />
-    <End Role="QuyenAdmin" Type="Self.QuyenAdmin" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Admin">
-        <PropertyRef Name="Id" />
-      </Principal>
-      <Dependent Role="QuyenAdmin">
-        <PropertyRef Name="MaAdmin" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_QuyenAdmin_ChucVu">
-    <End Role="ChucVu" Type="Self.ChucVu" Multiplicity="1" />
-    <End Role="QuyenAdmin" Type="Self.QuyenAdmin" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="ChucVu">
-        <PropertyRef Name="Id" />
-      </Principal>
-      <Dependent Role="QuyenAdmin">
-        <PropertyRef Name="MaQuyen" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
   <Association Name="FK_ViTien_KhachHang">
     <End Role="KhachHang" Type="Self.KhachHang" Multiplicity="1" />
     <End Role="ViTien" Type="Self.ViTien" Multiplicity="*" />
@@ -547,14 +524,6 @@
     <AssociationSet Name="FK_LichSuNVGH_NhanVienGiaoHang" Association="Self.FK_LichSuNVGH_NhanVienGiaoHang">
       <End Role="NhanVienGiaoHang" EntitySet="NhanVienGiaoHang" />
       <End Role="LichSuNVGH" EntitySet="LichSuNVGH" />
-    </AssociationSet>
-    <AssociationSet Name="FK_QuyenAdmin_Admin" Association="Self.FK_QuyenAdmin_Admin">
-      <End Role="Admin" EntitySet="Admin" />
-      <End Role="QuyenAdmin" EntitySet="QuyenAdmin" />
-    </AssociationSet>
-    <AssociationSet Name="FK_QuyenAdmin_ChucVu" Association="Self.FK_QuyenAdmin_ChucVu">
-      <End Role="ChucVu" EntitySet="ChucVu" />
-      <End Role="QuyenAdmin" EntitySet="QuyenAdmin" />
     </AssociationSet>
     <AssociationSet Name="FK_ViTien_KhachHang" Association="Self.FK_ViTien_KhachHang">
       <End Role="KhachHang" EntitySet="KhachHang" />

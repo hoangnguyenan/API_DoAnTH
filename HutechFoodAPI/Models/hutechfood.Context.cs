@@ -13,9 +13,10 @@ namespace HutechFoodAPI.Models
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class HutechfoodEntities3 : DbContext
+    public partial class HutechfoodEntities : DbContext
     {
-        public HutechfoodEntities3() :base("name=HutechfoodEntities3")
+        public HutechfoodEntities()
+            : base("name=HutechfoodEntities")
         {
             Configuration.ProxyCreationEnabled = false;
         }
@@ -44,6 +45,7 @@ namespace HutechFoodAPI.Models
         public virtual DbSet<LichSuNVGH> LichSuNVGHs { get; set; }
         public virtual DbSet<LienHe> LienHes { get; set; }
         public virtual DbSet<NhanVienGiaoHang> NhanVienGiaoHangs { get; set; }
+        public virtual DbSet<QuyenAdmin> QuyenAdmins { get; set; }
         public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
         public virtual DbSet<ViTien> ViTiens { get; set; }
         public virtual DbSet<ViTienCuaHang> ViTienCuaHangs { get; set; }

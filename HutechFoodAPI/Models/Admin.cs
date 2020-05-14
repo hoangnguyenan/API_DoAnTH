@@ -14,19 +14,10 @@ namespace HutechFoodAPI.Models
     
     public partial class Admin
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Admin()
-        {
-            this.ChucVus = new HashSet<ChucVu>();
-        }
-    
         public int Id { get; set; }
         public string UserAdmin { get; set; }
         public string PassAdmin { get; set; }
         public string HotenAdmin { get; set; }
         public string EmailAdmin { get; set; }
-    
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<ChucVu> ChucVus { get; set; }
     }
 }

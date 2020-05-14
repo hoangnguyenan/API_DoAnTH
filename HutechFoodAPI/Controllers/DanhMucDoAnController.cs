@@ -14,7 +14,7 @@ namespace HutechFoodAPI.Controllers
 {
     public class DanhMucDoAnController : ApiController
     {
-        private HutechfoodEntities3 db = new HutechfoodEntities3();
+        private HutechfoodEntities db = new HutechfoodEntities();
 
         // GET: api/DanhMucDoAn
         public IQueryable<DanhMucDoAn> GetDanhMucDoAns()

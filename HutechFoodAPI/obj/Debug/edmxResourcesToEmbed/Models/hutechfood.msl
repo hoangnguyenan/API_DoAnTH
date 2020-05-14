@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-  <EntityContainerMapping StorageEntityContainer="HutechfoodModelStoreContainer" CdmEntityContainer="HutechfoodEntities3">
+  <EntityContainerMapping StorageEntityContainer="HutechfoodModelStoreContainer" CdmEntityContainer="HutechfoodEntities">
     <EntitySetMapping Name="Admins">
       <EntityTypeMapping TypeName="HutechfoodModel.Admin">
         <MappingFragment StoreEntitySet="Admin">
@@ -86,6 +86,7 @@
         <MappingFragment StoreEntitySet="ChucVu">
           <ScalarProperty Name="Id" ColumnName="Id" />
           <ScalarProperty Name="TenCV" ColumnName="TenCV" />
+          <ScalarProperty Name="Quyen" ColumnName="Quyen" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -234,6 +235,14 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="QuyenAdmins">
+      <EntityTypeMapping TypeName="HutechfoodModel.QuyenAdmin">
+        <MappingFragment StoreEntitySet="QuyenAdmin">
+          <ScalarProperty Name="MaAdmin" ColumnName="MaAdmin" />
+          <ScalarProperty Name="MaQuyen" ColumnName="MaQuyen" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
     <EntitySetMapping Name="sysdiagrams">
       <EntityTypeMapping TypeName="HutechfoodModel.sysdiagram">
         <MappingFragment StoreEntitySet="sysdiagrams">
@@ -275,13 +284,5 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <AssociationSetMapping Name="QuyenAdmin" TypeName="HutechfoodModel.QuyenAdmin" StoreEntitySet="QuyenAdmin">
-      <EndProperty Name="Admin">
-        <ScalarProperty Name="Id" ColumnName="MaAdmin" />
-      </EndProperty>
-      <EndProperty Name="ChucVu">
-        <ScalarProperty Name="Id" ColumnName="MaQuyen" />
-      </EndProperty>
-    </AssociationSetMapping>
   </EntityContainerMapping>
 </Mapping>

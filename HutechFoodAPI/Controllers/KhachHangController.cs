@@ -14,7 +14,7 @@ namespace HutechFoodAPI.Controllers
 {
     public class KhachHangController : ApiController
     {
-        public HutechfoodEntities3 db = new HutechfoodEntities3();
+        public HutechfoodEntities db = new HutechfoodEntities();
 
         // GET: api/KhachHangs
         public List<KhachHang> GetKhachHangs()

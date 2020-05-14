@@ -12,44 +12,44 @@ using HutechFoodAPI.Models;
 
 namespace HutechFoodAPI.Controllers
 {
-    public class LichSuNVGHController : ApiController
+    public class QuyenAdminController : ApiController
     {
         private HutechfoodEntities db = new HutechfoodEntities();
 
-        // GET: api/LichSuNVGH
-        public IQueryable<LichSuNVGH> GetLichSuNVGHs()
+        // GET: api/QuyenAdmin
+        public IQueryable<QuyenAdmin> GetQuyenAdmins()
         {
-            return db.LichSuNVGHs;
+            return db.QuyenAdmins;
         }
 
-        // GET: api/LichSuNVGH/5
-        [ResponseType(typeof(LichSuNVGH))]
-        public IHttpActionResult GetLichSuNVGH(int id)
+        // GET: api/QuyenAdmin/5
+        [ResponseType(typeof(QuyenAdmin))]
+        public IHttpActionResult GetQuyenAdmin(int id)
         {
-            LichSuNVGH lichSuNVGH = db.LichSuNVGHs.Find(id);
-            if (lichSuNVGH == null)
+            QuyenAdmin quyenAdmin = db.QuyenAdmins.Find(id);
+            if (quyenAdmin == null)
             {
                 return NotFound();
             }
 
-            return Ok(lichSuNVGH);
+            return Ok(quyenAdmin);
         }
 
-        // PUT: api/LichSuNVGH/5
+        // PUT: api/QuyenAdmin/5
         [ResponseType(typeof(void))]
-        public IHttpActionResult PutLichSuNVGH(int id, LichSuNVGH lichSuNVGH)
+        public IHttpActionResult PutQuyenAdmin(int id, QuyenAdmin quyenAdmin)
         {
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
 
-            if (id != lichSuNVGH.MaLS)
+            if (id != quyenAdmin.MaAdmin)
             {
                 return BadRequest();
             }
 
-            db.Entry(lichSuNVGH).State = EntityState.Modified;
+            db.Entry(quyenAdmin).State = EntityState.Modified;
 
             try
             {
@@ -57,7 +57,7 @@ namespace HutechFoodAPI.Controllers
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (!LichSuNVGHExists(id))
+                if (!QuyenAdminExists(id))
                 {
                     return NotFound();
                 }
@@ -70,16 +70,16 @@ namespace HutechFoodAPI.Controllers
             return StatusCode(HttpStatusCode.NoContent);
         }
 
-        // POST: api/LichSuNVGH
-        [ResponseType(typeof(LichSuNVGH))]
-        public IHttpActionResult PostLichSuNVGH(LichSuNVGH lichSuNVGH)
+        // POST: api/QuyenAdmin
+        [ResponseType(typeof(QuyenAdmin))]
+        public IHttpActionResult PostQuyenAdmin(QuyenAdmin quyenAdmin)
         {
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
 
-            db.LichSuNVGHs.Add(lichSuNVGH);
+            db.QuyenAdmins.Add(quyenAdmin);
 
             try
             {
@@ -87,7 +87,7 @@ namespace HutechFoodAPI.Controllers
             }
             catch (DbUpdateException)
             {
-                if (LichSuNVGHExists(lichSuNVGH.MaLS))
+                if (QuyenAdminExists(quyenAdmin.MaAdmin))
                 {
                     return Conflict();
                 }
@@ -97,23 +97,23 @@ namespace HutechFoodAPI.Controllers
                 }
             }
 
-            return CreatedAtRoute("DefaultApi", new { id = lichSuNVGH.MaLS }, lichSuNVGH);
+            return CreatedAtRoute("DefaultApi", new { id = quyenAdmin.MaAdmin }, quyenAdmin);
         }
 
-        // DELETE: api/LichSuNVGH/5
-        [ResponseType(typeof(LichSuNVGH))]
-        public IHttpActionResult DeleteLichSuNVGH(int id)
+        // DELETE: api/QuyenAdmin/5
+        [ResponseType(typeof(QuyenAdmin))]
+        public IHttpActionResult DeleteQuyenAdmin(int id)
         {
-            LichSuNVGH lichSuNVGH = db.LichSuNVGHs.Find(id);
-            if (lichSuNVGH == null)
+            QuyenAdmin quyenAdmin = db.QuyenAdmins.Find(id);
+            if (quyenAdmin == null)
             {
                 return NotFound();
             }
 
-            db.LichSuNVGHs.Remove(lichSuNVGH);
+            db.QuyenAdmins.Remove(quyenAdmin);
             db.SaveChanges();
 
-            return Ok(lichSuNVGH);
+            return Ok(quyenAdmin);
         }
 
         protected override void Dispose(bool disposing)
@@ -125,9 +125,9 @@ namespace HutechFoodAPI.Controllers
             base.Dispose(disposing);
         }
 
-        private bool LichSuNVGHExists(int id)
+        private bool QuyenAdminExists(int id)
         {
-            return db.LichSuNVGHs.Count(e => e.MaLS == id) > 0;
+            return db.QuyenAdmins.Count(e => e.MaAdmin == id) > 0;
         }
     }
 }

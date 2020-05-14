@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="HutechfoodModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="HutechfoodModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Admin">
           <Key>
             <PropertyRef Name="Id" />
@@ -86,6 +86,7 @@
           </Key>
           <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="TenCV" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Quyen" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="CuaHang">
           <Key>
@@ -428,30 +429,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_QuyenAdmin_Admin">
-          <End Role="Admin" Type="Self.Admin" Multiplicity="1" />
-          <End Role="QuyenAdmin" Type="Self.QuyenAdmin" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Admin">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="QuyenAdmin">
-              <PropertyRef Name="MaAdmin" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_QuyenAdmin_ChucVu">
-          <End Role="ChucVu" Type="Self.ChucVu" Multiplicity="1" />
-          <End Role="QuyenAdmin" Type="Self.QuyenAdmin" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="ChucVu">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="QuyenAdmin">
-              <PropertyRef Name="MaQuyen" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK_ViTien_KhachHang">
           <End Role="KhachHang" Type="Self.KhachHang" Multiplicity="1" />
           <End Role="ViTien" Type="Self.ViTien" Multiplicity="*" />
@@ -553,14 +530,6 @@
             <End Role="NhanVienGiaoHang" EntitySet="NhanVienGiaoHang" />
             <End Role="LichSuNVGH" EntitySet="LichSuNVGH" />
           </AssociationSet>
-          <AssociationSet Name="FK_QuyenAdmin_Admin" Association="Self.FK_QuyenAdmin_Admin">
-            <End Role="Admin" EntitySet="Admin" />
-            <End Role="QuyenAdmin" EntitySet="QuyenAdmin" />
-          </AssociationSet>
-          <AssociationSet Name="FK_QuyenAdmin_ChucVu" Association="Self.FK_QuyenAdmin_ChucVu">
-            <End Role="ChucVu" EntitySet="ChucVu" />
-            <End Role="QuyenAdmin" EntitySet="QuyenAdmin" />
-          </AssociationSet>
           <AssociationSet Name="FK_ViTien_KhachHang" Association="Self.FK_ViTien_KhachHang">
             <End Role="KhachHang" EntitySet="KhachHang" />
             <End Role="ViTien" EntitySet="ViTien" />
@@ -570,8 +539,7 @@
             <End Role="ViTienCuaHang" EntitySet="ViTienCuaHang" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="HutechfoodModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -584,7 +552,6 @@
           <Property Name="PassAdmin" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="HotenAdmin" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="EmailAdmin" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <NavigationProperty Name="ChucVus" Relationship="Self.QuyenAdmin" FromRole="Admin" ToRole="ChucVu" />
         </EntityType>
         <EntityType Name="BaiVietBanChay">
           <Key>
@@ -659,9 +626,9 @@
           <Key>
             <PropertyRef Name="Id" />
           </Key>
-          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Id" Type="Int32" Nullable="false" />
           <Property Name="TenCV" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-          <NavigationProperty Name="Admins" Relationship="Self.QuyenAdmin" FromRole="ChucVu" ToRole="Admin" />
+          <Property Name="Quyen" Type="Int32" Nullable="false" />
         </EntityType>
         <EntityType Name="CuaHang">
           <Key>
@@ -818,6 +785,14 @@
           <Property Name="DoUuTien" Type="Int16" />
           <Property Name="DanhGiaNVGH" Type="Int16" />
           <NavigationProperty Name="LichSuNVGHs" Relationship="Self.FK_LichSuNVGH_NhanVienGiaoHang" FromRole="NhanVienGiaoHang" ToRole="LichSuNVGH" />
+        </EntityType>
+        <EntityType Name="QuyenAdmin">
+          <Key>
+            <PropertyRef Name="MaAdmin" />
+            <PropertyRef Name="MaQuyen" />
+          </Key>
+          <Property Name="MaAdmin" Type="Int32" Nullable="false" />
+          <Property Name="MaQuyen" Type="Int32" Nullable="false" />
         </EntityType>
         <EntityType Name="sysdiagram">
           <Key>
@@ -1046,11 +1021,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="QuyenAdmin">
-          <End Role="Admin" Type="Self.Admin" Multiplicity="*" />
-          <End Role="ChucVu" Type="Self.ChucVu" Multiplicity="*" />
-        </Association>
-        <EntityContainer Name="HutechfoodEntities3" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="HutechfoodEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Admins" EntityType="Self.Admin" />
           <EntitySet Name="BaiVietBanChays" EntityType="Self.BaiVietBanChay" />
           <EntitySet Name="BaiVietGTs" EntityType="Self.BaiVietGT" />
@@ -1070,6 +1041,7 @@
           <EntitySet Name="LichSuNVGHs" EntityType="Self.LichSuNVGH" />
           <EntitySet Name="LienHes" EntityType="Self.LienHe" />
           <EntitySet Name="NhanVienGiaoHangs" EntityType="Self.NhanVienGiaoHang" />
+          <EntitySet Name="QuyenAdmins" EntityType="Self.QuyenAdmin" />
           <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
           <EntitySet Name="ViTiens" EntityType="Self.ViTien" />
           <EntitySet Name="ViTienCuaHangs" EntityType="Self.ViTienCuaHang" />
@@ -1134,17 +1106,13 @@
             <End Role="NhanVienGiaoHang" EntitySet="NhanVienGiaoHangs" />
             <End Role="LichSuNVGH" EntitySet="LichSuNVGHs" />
           </AssociationSet>
-          <AssociationSet Name="QuyenAdmin" Association="Self.QuyenAdmin">
-            <End Role="Admin" EntitySet="Admins" />
-            <End Role="ChucVu" EntitySet="ChucVus" />
-          </AssociationSet>
         </EntityContainer>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="HutechfoodModelStoreContainer" CdmEntityContainer="HutechfoodEntities3">
+        <EntityContainerMapping StorageEntityContainer="HutechfoodModelStoreContainer" CdmEntityContainer="HutechfoodEntities">
           <EntitySetMapping Name="Admins">
             <EntityTypeMapping TypeName="HutechfoodModel.Admin">
               <MappingFragment StoreEntitySet="Admin">
@@ -1230,6 +1198,7 @@
               <MappingFragment StoreEntitySet="ChucVu">
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="TenCV" ColumnName="TenCV" />
+                <ScalarProperty Name="Quyen" ColumnName="Quyen" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -1378,6 +1347,14 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <EntitySetMapping Name="QuyenAdmins">
+            <EntityTypeMapping TypeName="HutechfoodModel.QuyenAdmin">
+              <MappingFragment StoreEntitySet="QuyenAdmin">
+                <ScalarProperty Name="MaAdmin" ColumnName="MaAdmin" />
+                <ScalarProperty Name="MaQuyen" ColumnName="MaQuyen" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           <EntitySetMapping Name="sysdiagrams">
             <EntityTypeMapping TypeName="HutechfoodModel.sysdiagram">
               <MappingFragment StoreEntitySet="sysdiagrams">
@@ -1419,14 +1396,6 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <AssociationSetMapping Name="QuyenAdmin" TypeName="HutechfoodModel.QuyenAdmin" StoreEntitySet="QuyenAdmin">
-            <EndProperty Name="Admin">
-              <ScalarProperty Name="Id" ColumnName="MaAdmin" />
-            </EndProperty>
-            <EndProperty Name="ChucVu">
-              <ScalarProperty Name="Id" ColumnName="MaQuyen" />
-            </EndProperty>
-          </AssociationSetMapping>
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>
