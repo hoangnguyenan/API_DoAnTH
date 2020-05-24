@@ -26,7 +26,7 @@ namespace HutechFoodAPI.Controllers
         [ResponseType(typeof(QuyenAdmin))]
         public IHttpActionResult GetQuyenAdmin(int id)
         {
-            QuyenAdmin quyenAdmin = db.QuyenAdmins.Find(id);
+            QuyenAdmin quyenAdmin = db.QuyenAdmins.Where(n => n.MaAdmin == id).SingleOrDefault();
             if (quyenAdmin == null)
             {
                 return NotFound();
@@ -48,8 +48,6 @@ namespace HutechFoodAPI.Controllers
             {
                 return BadRequest();
             }
-
-            db.Entry(quyenAdmin).State = EntityState.Modified;
 
             try
             {
@@ -104,7 +102,7 @@ namespace HutechFoodAPI.Controllers
         [ResponseType(typeof(QuyenAdmin))]
         public IHttpActionResult DeleteQuyenAdmin(int id)
         {
-            QuyenAdmin quyenAdmin = db.QuyenAdmins.Find(id);
+            QuyenAdmin quyenAdmin = db.QuyenAdmins.Where(n=>n.MaAdmin == id).SingleOrDefault();
             if (quyenAdmin == null)
             {
                 return NotFound();
