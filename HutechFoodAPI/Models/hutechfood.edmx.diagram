@@ -4,15 +4,15 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="69d51e476296442fa81cf9e22f066f70" Name="Diagram1">
+      <Diagram DiagramId="ca6aa4a679fb48ce8f4a8e9795a90ada" Name="Diagram1">
         <EntityTypeShape EntityType="HutechfoodModel.Admin" Width="1.5" PointX="8.75" PointY="3" IsExpanded="true" />
         <EntityTypeShape EntityType="HutechfoodModel.BaiVietBanChay" Width="1.5" PointX="5.75" PointY="12" IsExpanded="true" />
         <EntityTypeShape EntityType="HutechfoodModel.BaiVietGT" Width="1.5" PointX="7.75" PointY="12" IsExpanded="true" />
         <EntityTypeShape EntityType="HutechfoodModel.BaiVietHD" Width="1.5" PointX="9.75" PointY="12" IsExpanded="true" />
-        <EntityTypeShape EntityType="HutechfoodModel.CaiDat" Width="1.5" PointX="12.625" PointY="6.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="HutechfoodModel.CaiDat" Width="1.5" PointX="10.75" PointY="3" IsExpanded="true" />
         <EntityTypeShape EntityType="HutechfoodModel.ChiTietDonHang" Width="1.5" PointX="5.25" PointY="5.5" IsExpanded="true" />
         <EntityTypeShape EntityType="HutechfoodModel.ChiTietKhuyenMai" Width="1.5" PointX="5.25" PointY="19.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="HutechfoodModel.ChucVu" Width="1.5" PointX="12.75" PointY="3.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="HutechfoodModel.ChucVu" Width="1.5" PointX="2.75" PointY="3" IsExpanded="true" />
         <EntityTypeShape EntityType="HutechfoodModel.CuaHang" Width="1.5" PointX="1.5" PointY="24.125" IsExpanded="true" />
         <EntityTypeShape EntityType="HutechfoodModel.DanhMucDoAn" Width="1.5" PointX="0.75" PointY="19.75" IsExpanded="true" />
         <EntityTypeShape EntityType="HutechfoodModel.DoAn" Width="1.5" PointX="3" PointY="19" IsExpanded="true" />
@@ -24,7 +24,7 @@
         <EntityTypeShape EntityType="HutechfoodModel.LichSuNVGH" Width="1.5" PointX="8.25" PointY="8.375" IsExpanded="true" />
         <EntityTypeShape EntityType="HutechfoodModel.LienHe" Width="1.5" PointX="0.75" PointY="13" IsExpanded="true" />
         <EntityTypeShape EntityType="HutechfoodModel.NhanVienGiaoHang" Width="1.5" PointX="6" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="HutechfoodModel.QuyenAdmin" Width="1.5" PointX="10.875" PointY="3.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="HutechfoodModel.QuyenAdmin" Width="1.5" PointX="7.75" PointY="6" IsExpanded="true" />
         <EntityTypeShape EntityType="HutechfoodModel.sysdiagram" Width="1.5" PointX="10.75" PointY="6" IsExpanded="true" />
         <EntityTypeShape EntityType="HutechfoodModel.ViTien" Width="1.5" PointX="3" PointY="15.75" IsExpanded="true" />
         <EntityTypeShape EntityType="HutechfoodModel.ViTienCuaHang" Width="1.5" PointX="3.75" PointY="24.625" IsExpanded="true" />

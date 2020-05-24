@@ -83,7 +83,7 @@
     <Key>
       <PropertyRef Name="Id" />
     </Key>
-    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="TenCV" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
     <Property Name="Quyen" Type="Int32" Nullable="false" />
   </EntityType>
@@ -246,7 +246,6 @@
   <EntityType Name="QuyenAdmin">
     <Key>
       <PropertyRef Name="MaAdmin" />
-      <PropertyRef Name="MaQuyen" />
     </Key>
     <Property Name="MaAdmin" Type="Int32" Nullable="false" />
     <Property Name="MaQuyen" Type="Int32" Nullable="false" />
@@ -478,7 +477,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <EntityContainer Name="HutechfoodEntities" annotation:LazyLoadingEnabled="true">
+  <EntityContainer Name="HutechfoodEntities1" annotation:LazyLoadingEnabled="true">
     <EntitySet Name="Admins" EntityType="Self.Admin" />
     <EntitySet Name="BaiVietBanChays" EntityType="Self.BaiVietBanChay" />
     <EntitySet Name="BaiVietGTs" EntityType="Self.BaiVietGT" />

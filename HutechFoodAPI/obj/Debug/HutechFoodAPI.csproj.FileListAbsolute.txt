@@ -168,3 +168,4 @@ D:\DoAnCN\API_DoAnTH\HutechFoodAPI\obj\Debug\HutechFoodAPI.csproj.CoreCompileInp
 D:\DoAnCN\API_DoAnTH\HutechFoodAPI\obj\Debug\HutechFoodAPI.csproj.CopyComplete
 D:\DoAnCN\API_DoAnTH\HutechFoodAPI\obj\Debug\HutechFoodAPI.dll
 D:\DoAnCN\API_DoAnTH\HutechFoodAPI\obj\Debug\HutechFoodAPI.pdb
+D:\DoAnCN\API_DoAnTH\HutechFoodAPI\obj\Debug\HutechFoodAPI.csprojAssemblyReference.cache

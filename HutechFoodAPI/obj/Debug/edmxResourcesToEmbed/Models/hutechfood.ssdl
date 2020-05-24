@@ -220,7 +220,6 @@
   <EntityType Name="QuyenAdmin">
     <Key>
       <PropertyRef Name="MaAdmin" />
-      <PropertyRef Name="MaQuyen" />
     </Key>
     <Property Name="MaAdmin" Type="int" Nullable="false" />
     <Property Name="MaQuyen" Type="int" Nullable="false" />
