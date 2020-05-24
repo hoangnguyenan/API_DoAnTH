@@ -164,6 +164,7 @@
     <Compile Include="Areas\HelpPage\SampleGeneration\TextSample.cs" />
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
     <Compile Include="Controllers\AdminController.cs" />
+    <Compile Include="Controllers\AdminRoleController.cs" />
     <Compile Include="Controllers\BaiVietBanChayController.cs" />
     <Compile Include="Controllers\BaiVietGTController.cs" />
     <Compile Include="Controllers\BaiVietHDController.cs" />
@@ -194,6 +195,7 @@
     <Compile Include="Models\Admin.cs">
       <DependentUpon>hutechfood.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\AdminRole.cs" />
     <Compile Include="Models\BaiVietBanChay.cs">
       <DependentUpon>hutechfood.tt</DependentUpon>
     </Compile>

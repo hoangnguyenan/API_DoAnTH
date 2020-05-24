@@ -5,8 +5,6 @@ using System.Web;
 
 namespace HutechFoodAPI.Models
 {
-    using System;
-    using System.Collections.Generic;
     public class AdminRole
     {
         public int Id { get; set; }

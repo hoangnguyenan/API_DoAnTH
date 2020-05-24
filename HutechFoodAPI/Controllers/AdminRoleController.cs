@@ -37,7 +37,7 @@ namespace HutechFoodAPI.Controllers
                 adminRoleTemp.EmailAdmin = admin.EmailAdmin;
                 // QuyenAdmin
                 QuyenAdmin quyenAdminTemp = listRole.Where(n => n.MaAdmin == admin.Id).SingleOrDefault();
-                if(quyenAdminTemp != null)
+                if (quyenAdminTemp != null)
                 {
                     adminRoleTemp.MaQuyen = quyenAdminTemp.MaQuyen;
                     // Add to list

@@ -50,5 +50,7 @@ namespace HutechFoodAPI.Models
         public virtual DbSet<ViTien> ViTiens { get; set; }
         public virtual DbSet<ViTienCuaHang> ViTienCuaHangs { get; set; }
         public virtual DbSet<ViTriGiaoHang> ViTriGiaoHangs { get; set; }
+
+        public System.Data.Entity.DbSet<HutechFoodAPI.Models.AdminRole> AdminRoles { get; set; }
     }
 }
