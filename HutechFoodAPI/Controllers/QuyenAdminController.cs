@@ -48,7 +48,7 @@ namespace HutechFoodAPI.Controllers
             {
                 return BadRequest();
             }
-
+            db.Entry(quyenAdmin).State = EntityState.Modified;
             try
             {
                 db.SaveChanges();
