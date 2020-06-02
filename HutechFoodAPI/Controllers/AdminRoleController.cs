@@ -98,9 +98,10 @@ namespace HutechFoodAPI.Controllers
                 //QuyenAdmin quyenAdmin1 = new QuyenAdmin();
                 //quyenAdmin.MaAdmin = admin.Id;
                 //quyenAdmin.MaQuyen = adminRole.MaQuyen;
+
                 QuyenAdmin quyenAdmin = db.QuyenAdmins.Where(n => n.MaAdmin == admin.Id).SingleOrDefault();
                 quyenAdmin.MaQuyen = adminRole.MaQuyen;
-                db.Entry(quyenAdmin).State = EntityState.Added;
+                db.Entry(quyenAdmin).State = EntityState.Modified;
                 db.SaveChanges();
             }
             catch (DbUpdateConcurrencyException)
@@ -147,16 +148,18 @@ namespace HutechFoodAPI.Controllers
         [ResponseType(typeof(AdminRole))]
         public IHttpActionResult DeleteAdminRole(int id)
         {
-            AdminRole adminRole = db.AdminRoles.Find(id);
-            if (adminRole == null)
+            Admin admin = db.Admins.SingleOrDefault(n=>n.Id == id);
+            QuyenAdmin quyenAdmin = db.QuyenAdmins.SingleOrDefault(n=>n.MaAdmin == id);
+            if (admin == null && quyenAdmin == null)
             {
                 return NotFound();
             }
 
-            db.AdminRoles.Remove(adminRole);
+            db.Admins.Remove(admin);
+            db.QuyenAdmins.Remove(quyenAdmin);
             db.SaveChanges();
 
-            return Ok(adminRole);
+            return Ok(admin);
         }
 
         protected override void Dispose(bool disposing)
